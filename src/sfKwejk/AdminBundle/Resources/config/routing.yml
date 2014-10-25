@@ -1,0 +1,3 @@
+sf_kwejk_admin_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: sfKwejkAdminBundle:Default:index }

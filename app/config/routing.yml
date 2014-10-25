@@ -1,0 +1,16 @@
+sf_kwejk_layout:
+    resource: "@sfKwejkLayoutBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sf_kwejk_mems:
+    resource: "@sfKwejkMemsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sf_kwejk_user:
+    resource: "@sfKwejkUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sf_kwejk_admin:
+    resource: "@sfKwejkAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
