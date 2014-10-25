@@ -21,6 +21,9 @@ class AppKernel extends Kernel
             new Kwejk\UserBundle\KwejkUserBundle(),
             new Kwejk\MemsBundle\KwejkMemsBundle(),
             new Kwejk\LayoutBundle\KwejkLayoutBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
