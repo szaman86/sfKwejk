@@ -68,7 +68,7 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(name="userAgent", type="string", length=255)
+     * @ORM\Column(name="user_agent", type="string", length=255)
      */
     private $userAgent;
 
