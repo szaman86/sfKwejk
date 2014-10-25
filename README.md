@@ -1,3 +1,5 @@
+Edycja
+
 Symfony Standard Edition
 ========================
 
