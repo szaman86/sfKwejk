@@ -4,19 +4,20 @@
 
 {% block body %}
 <h1>{{ block('title') }}</h1>
-
         <div>
         <a href="{{path('kwejk_mems_show', {'slug':mem.slug})}}">
-            <p>{{ mem.title }}</p>
             <img src="{{asset ('uploads/mems/' ~ mem.imageName)}}" alt="{{mem.title}}">
         </a>
         <p>Dodany przez {{mem.CreatedBy}}, dnia {{mem.createAt|date('Y-m-d H:i:s')}}</p>
         <h3>Komentarze ({{mem.comments|length }})</h3>
+        <div class="komentarze">
         {% for comment in mem.comments %}
             <p id="comment-{{ comment.id }}">
+                {# id comment służy do zakładania kotwic do kodu żeby łatwo było przeskakiwać do danego komentarza #}
                 {{comment.commment}}
                 <small>Dodano przez {{comment.createdBy }} dnia {{comment.commentedAt|date('Y-m-d H:i:s')}}</small>
         {% endfor %}
+        </div>
         </div>
             
 {% endblock %}
