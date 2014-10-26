@@ -15,9 +15,11 @@
     </head>
     <body>
         {{ knp_menu_render('KwejkLayoutBundle:Builder:mainMenu')}}
+        <div class="container">
         {% block body %}
 
         {% endblock %}
+        </div>
         {% block javascripts %}
             {% javascripts
 	        	'https://code.jquery.com/jquery-1.11.1.min.js'
