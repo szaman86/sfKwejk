@@ -1,0 +1,15 @@
+{% extends "KwejkLayoutBundle::layout.html.twig" %}
+
+{% block title %}Lista Memów{% endblock %}
+
+{% block body %}
+    {% for mem in mems %}
+        <div>
+        <a href="{{path('kwejk_mems_show', {'slug':mem.slug})}}">
+            <p>{{ mem.title }}</p>
+            <img src="{{asset ('uploads/mems/' ~ mem.imageName)}}" alt="{{mem.title}}">
+        </a>
+        </div>
+        {% else %}
+            {% endfor %}
+{% endblock %}
