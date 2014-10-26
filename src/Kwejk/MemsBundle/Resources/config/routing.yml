@@ -1,3 +1,19 @@
 kwejk_mems_homepage:
     path:     /hello/{name}
     defaults: { _controller: KwejkMemsBundle:Default:index }
+
+kwejk_mems_list:
+    path:     /
+    defaults: { _controller: KwejkMemsBundle:Mems:list }
+
+kwejk_mems_show:
+    path:     /{slug}
+    defaults: { _controller: KwejkMemsBundle:Mems:show }
+#
+new:
+    path:     /comment/new
+    defaults: { _controller: KwejkMemsBundle:Controller:new }
+
+edit:
+    path:     /comment/edit/{id}
+    defaults: { _controller: KwejkMemsBundle:Controller:edit }
