@@ -4,17 +4,17 @@ namespace Kwejk\MemsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ControllerController extends Controller
+class CommentController extends Controller
 {
     public function newAction()
     {
-        return $this->render('KwejkMemsBundle:Controller:new.html.twig', array(
+        return $this->render('KwejkMemsBundle:Comment:new.html.twig', array(
                 // ...
             ));    }
 
     public function editAction($id)
     {
-        return $this->render('KwejkMemsBundle:Controller:edit.html.twig', array(
+        return $this->render('KwejkMemsBundle:Comment:edit.html.twig', array(
                 // ...
             ));    }
 
