@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    
     /**
      * @var integer
      *
@@ -56,6 +57,7 @@ class User extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->mems = new \Doctrine\Common\Collections\ArrayCollection();
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->ratings = new \Doctrine\Common\Collections\ArrayCollection();
