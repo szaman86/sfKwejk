@@ -26,21 +26,21 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="Kwejk\MemsBundle\Entity\Mem", mappedBy="createdBy")
      * @var ArrayCollection
      */
-    private $mems;
+    protected $mems;
     
     
     /**
      * @ORM\OneToMany(targetEntity="Kwejk\MemsBundle\Entity\Comment", mappedBy="createdBy")
      * @var ArrayCollection
      */
-    private $comments;
+    protected $comments;
     
     
     /**
      * @ORM\OneToMany(targetEntity="Kwejk\MemsBundle\Entity\Rating", mappedBy="createdBy")
      * @var ArrayCollection
      */
-    private $ratings;
+    protected $ratings;
     
     /**
      * Get id

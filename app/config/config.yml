@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: "%locale%" }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -73,7 +73,7 @@ swiftmailer:
     
 doctrine_migrations:
     dir_name: %kernel.root_dir%/DoctrineMigrations
-    namespace: Application\Migrations
+    namespace: Migrations
     table_name: migration_versions
     name: Application Migrations    
 
