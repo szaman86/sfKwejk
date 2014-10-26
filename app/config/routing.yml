@@ -1,3 +1,7 @@
+kwejk_core:
+    resource: "@KwejkCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kwejk_layout:
     resource: "@KwejkLayoutBundle/Resources/config/routing.yml"
     prefix:   /

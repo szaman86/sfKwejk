@@ -210,6 +210,7 @@ class Mem
      */
     public function __construct()
     {
+        $this->createAt = new \DateTime('now');        
         $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
         $this->ratings = new \Doctrine\Common\Collections\ArrayCollection();
     }
