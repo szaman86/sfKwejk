@@ -20,7 +20,12 @@ class MemsController extends Controller
                 'mems' =>$mems,
             ));    }
 
-    public function showAction($slug)
+   public function addAction() {
+       //
+   }
+
+
+   public function showAction($slug)
     {
         $mem = $this->getDoctrine()
                 ->getRepository('KwejkMemsBundle:Mem')
@@ -36,4 +41,6 @@ class MemsController extends Controller
                 'mem' => $mem,
             ));    }
 
+            
+            
 }

@@ -41,9 +41,9 @@ class Mem
      * @var ArrayCollection
      * 
      */
+    
     private $ratings;
-
-
+  
 
     /**
      * @var \DateTime
@@ -62,17 +62,17 @@ class Mem
     /**
      * @var string
      *
-     * @ORM\Column(name="slug", type="string", length=255)
-     */
-    private $slug;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="image_name", type="string", length=255)
      */
     private $imageName;
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;  
+    
     /**
      * @var boolean
      *
@@ -136,12 +136,10 @@ class Mem
     {
         return $this->title;
     }
-
-    /**
-     * Set slug
+   /**
+     * @var string
      *
-     * @param string $slug
-     * @return Mems
+     * @ORM\Column(name="slug", type="string", length=255)
      */
     public function setSlug($slug)
     {
