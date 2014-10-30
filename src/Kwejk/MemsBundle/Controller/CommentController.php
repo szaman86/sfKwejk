@@ -9,7 +9,8 @@ class CommentController extends Controller
     public function newAction()
     {
         return $this->render('KwejkMemsBundle:Comment:new.html.twig', array(
-                // ...
+        // Tworzymy formularz dodawania komentarza
+            
             ));    }
 
     public function editAction($id)
