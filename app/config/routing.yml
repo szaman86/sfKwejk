@@ -1,3 +1,6 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 KwejkUserBundle_admin_kwejk_user_bundle_user:
     resource: "@KwejkUserBundle/Controller/User/"
     type:     admingenerator
@@ -12,8 +15,7 @@ kwejk_core:
     resource: "@KwejkCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 #
 #kwejk_layout:
 #    resource: "@KwejkLayoutBundle/Resources/config/routing.yml"

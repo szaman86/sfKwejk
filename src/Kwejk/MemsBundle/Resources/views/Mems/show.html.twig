@@ -21,6 +21,11 @@
                 {{comment.comment}}
                 <small>Dodano przez {{comment.createdBy }} dnia {{comment.createdAt|date('Y-m-d H:i:s')}}</small>
             </p>
+             {% if is_granted('ROLE_USER') %}
+                <h3>Dodaj komentarz</h3>
+                {{ form(form) }}
+
+            {% endif %}
 
         {% else %}
             <p> Nie znaleziono komentarzy </p>

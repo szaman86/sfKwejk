@@ -5,7 +5,9 @@ namespace Kwejk\MemsBundle\Controller;
 
 use Kwejk\MemsBundle\Form\CommentType;
 use Kwejk\MemsBundle\Form\AddCommentType;
+use Kwejk\MemsBundle\Form\AddRatingType;
 use Kwejk\MemsBundle\Entity\Comment;
+use Kwejk\MemsBundle\Entity\Rating;
 use Symfony\Component\HttpFoundation\Request;
 use Kwejk\CoreBundle\Controller\Controller;
 
@@ -50,6 +52,9 @@ class MemsController extends Controller {
 
         // Z encji Comment tworzymy nowy rekord
         //Dodajemy formularz
+        $rating = new Rating();
+        $form = $this->createForm(new AddRatingType(), $rating);
+        
         $comment = new Comment();
         $form = $this->createForm(new AddCommentType(), $comment);
 
@@ -59,12 +64,17 @@ class MemsController extends Controller {
             throw $this->createAccessDeniedException("Nie posiadasz odpowiednich uprawnień!");
         }
             $comment->setCreatedBy($user);
+//            $comment->setCreatedAt($request->headers->getDate('now'));
             $comment->setMem($mem);
             $comment->setIp($ip);
             $comment->setUserAgent($request->headers->get('User-Agent'));
             $comment->setHost($request->getHost());
-            //TODO do przetestowania host i inne
-
+            
+            $rating->setCreatedBy($user);
+//            $rating->setCreatedAtCreatedAt($request->headers->getDate());
+            $rating->setMem($mem);
+            
+            
             $form->handleRequest($request);
             if ($form->isValid()) {
 //                $comment->setCreatedAt(getdate($timestamp));

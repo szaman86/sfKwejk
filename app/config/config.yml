@@ -99,4 +99,4 @@ admingenerator_generator:
     use_propel:           false
     use_doctrine_orm:     true
     use_doctrine_odm:     false
-            
+
