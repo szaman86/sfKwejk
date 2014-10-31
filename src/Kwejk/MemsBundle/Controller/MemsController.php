@@ -53,10 +53,10 @@ class MemsController extends Controller {
         // Z encji Comment tworzymy nowy rekord
         //Dodajemy formularz
         $rating = new Rating();
-        $form = $this->createForm(new AddRatingType(), $rating);
+        $formRating = $this->createForm(new AddRatingType(), $rating);
         
         $comment = new Comment();
-        $form = $this->createForm(new AddCommentType(), $comment);
+        $formComment = $this->createForm(new AddCommentType(), $comment);
 
         $user = $this->getUser();
         
@@ -75,8 +75,8 @@ class MemsController extends Controller {
             $rating->setMem($mem);
             
             
-            $form->handleRequest($request);
-            if ($form->isValid()) {
+            $formComment->handleRequest($request);
+            if ($formComment->isValid()) {
 //                $comment->setCreatedAt(getdate($timestamp));
                 // save data
                 $this->persist($comment);
@@ -87,11 +87,26 @@ class MemsController extends Controller {
                     'slug' => $mem->getSlug())
                         ));
             }
+            $formRating->handleRequest($request);
+            if ($formRating->isValid()) {
+//                $comment->setCreatedAt(getdate($timestamp));
+                // save data
+                $this->persist($rating);
+                $this->addFlash('notice', "Rating został pomyślnie zapisany.");
+ 
+                
+                return $this->redirect($this->generateUrl('kwejk_mems_show', array(
+                    'slug' => $mem->getSlug())
+                        ));
+            }
+            
+            
         return $this->render('KwejkMemsBundle:Mems:show.html.twig', array(
                     'mem' => $mem,
                     // [obiekt] nowy formularz przenosimy do funcji tworzenia widoku
                     //nasza pozycja w polu form będzie obiektem widoku
-                    'form' => $form->createView(),
+                    'formComment' => $formComment->createView(),
+                    'formRating' => $formRating->createView(),
         ));
             
             }

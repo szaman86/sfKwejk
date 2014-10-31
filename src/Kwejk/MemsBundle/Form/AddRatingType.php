@@ -15,27 +15,15 @@ class AddRatingType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-                ->add('rating', 'type' , array(
-                    'type' => 'radio',
-                    'value' => 1
+                ->add('rating', 'choice' , array(
+                    'choices' => array(
+                        '1' => 1,
+                        '2' => 2,
+                        '3' => 3,
+                        '4' => 4,
+                        '5' => 5,
+                        )
                 ))
-                ->add('rating', 'input', array(
-                    'type' => 'radio',
-                    'value' => 2
-                ))
-                ->add('rating', 'input', array(
-                    'type' => 'radio',
-                    'value' => 3
-                    ))
-                ->add('rating', 'input', array(
-                    'type' => 'radio',
-                    'value' => 4
-                ))  
-                ->add('rating', 'input', array(
-                    'type' => 'radio',
-                    'value' => 5
-                ))
-                ->add('save', 'submit')
         ;
     }
 

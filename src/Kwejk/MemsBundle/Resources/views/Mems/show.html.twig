@@ -21,9 +21,10 @@
                 {{comment.comment}}
                 <small>Dodano przez {{comment.createdBy }} dnia {{comment.createdAt|date('Y-m-d H:i:s')}}</small>
             </p>
-             {% if is_granted('ROLE_USER') %}
+            {% if is_granted('ROLE_USER') %}
                 <h3>Dodaj komentarz</h3>
-                {{ form(form) }}
+                {{ form(formComment) }}
+                {{ form(formRating) }}
 
             {% endif %}
 
@@ -32,7 +33,8 @@
 
             {% if is_granted('ROLE_USER') %}
                 <h3>Dodaj jako pierwszy!</h3>
-                {{ form(form) }}
+                {{ form(formComment) }}
+                {{ form(formRating) }}
 
             {% endif %}
 
