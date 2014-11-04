@@ -14,8 +14,8 @@ class Builder extends ContainerAware {
             'route' => 'kwejk_mems_list'
         ]);
         $menu->addChild('Poczekalnia', [
-//            'route' => 'sf_kwejk_list_waiting'
-            'uri' => '#'
+            'route' => 'kwejk_mems_poczekalnia'
+//            'uri' => '#'
         ]);
         $menu->addChild('Top', [
 //            'route' => 'sf_kwejk_list_top'
@@ -50,6 +50,7 @@ class Builder extends ContainerAware {
         $menu['User']->addChild('Profil', array('route' => 'fos_user_profile_edit'))
                 ->setAttribute('divider_append', true);
         $menu['User']->addChild('WYloguj', array('route' => 'fos_user_security_logout'));
+        $menu['User']->addChild('Dodaj Mema', ['route'=> 'kwejk_mems_add']);
 
         return $menu;
     }

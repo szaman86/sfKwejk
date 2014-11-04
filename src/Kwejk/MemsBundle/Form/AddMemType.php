@@ -6,29 +6,27 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class MemType extends AbstractType
-{
+class AddMemType extends AbstractType {
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-            ->add('createAt')
-            ->add('title')
-            ->add('slug')
-            ->add('imageName')
-            ->add('isAccepted')
-            ->add('createdBy')
+                ->add('title')
+                ->add('imageName', 'file')
+                ->add('save', 'submit', [
+                    'label' => 'Dodaj',
+                    'attr' => ['class' => 'btn pull-right']
+                ])
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
+    public function setDefaultOptions(OptionsResolverInterface $resolver) {
         $resolver->setDefaults(array(
             'data_class' => 'Kwejk\MemsBundle\Entity\Mem'
         ));
@@ -37,8 +35,8 @@ class MemType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'kwejk_memsbundle_mem';
     }
+
 }

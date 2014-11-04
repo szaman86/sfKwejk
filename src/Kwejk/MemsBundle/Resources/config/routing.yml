@@ -25,3 +25,7 @@ kwejk_mems_comment_edit:
 add_rating:
     path:     /addRating
     defaults: { _controller: KwejkMemsBundle:Rating:addRating }
+
+kwejk_mems_poczekalnia:
+    path:   /poczekalnia
+    defaults: { _controller: KwejkBundle:Mems:poczekalnia }

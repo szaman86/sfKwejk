@@ -27,7 +27,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "knplabs/knp-paginator-bundle": "~2.4",
         "liip/imagine-bundle": "dev-master",
-        "cedriclombardot/admingenerator-generator-bundle": "dev-master"
+        "cedriclombardot/admingenerator-generator-bundle": "dev-master",
+        "gedmo/doctrine-extensions":      "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
