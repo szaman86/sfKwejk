@@ -9,7 +9,7 @@ framework:
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
-    form:            ~
+    form:         ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
     templating:
@@ -28,6 +28,9 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - 'KwejkLayoutBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -100,3 +103,8 @@ admingenerator_generator:
     use_doctrine_orm:     true
     use_doctrine_odm:     false
 
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    orm:
+        default:
+            sluggable: true
