@@ -57,7 +57,7 @@ class MemsController extends Controller {
             'slug' => $slug,
         ]);
         if (!$mem) {
-            throw $this->createNotFoundException('Mem nie istnieje');
+            throw $this->createNotFoundException('Mema nie istnieje');
         }
 
         // Z encji Comment tworzymy nowy rekord
