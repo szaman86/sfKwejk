@@ -15,7 +15,7 @@ class AddMemType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
                 ->add('title')
-                ->add('imageName', 'file')
+                ->add('imageFile', 'file')
                 ->add('save', 'submit', [
                     'label' => 'Dodaj',
                     'attr' => ['class' => 'btn pull-right']

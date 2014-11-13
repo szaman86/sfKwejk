@@ -123,18 +123,18 @@ class MemsController extends Controller {
     public function addAction(Request $request) {
         // Sprawdzamy czy mamy użytkownika
         $user = $this->getUser();
+        
         if (!$user || !$user->hasRole('ROLE_USER')) {
             throw $this->createAccessDeniedException("Nie posiadasz odpowiednich uprawnień!");
         }
 
         $mem = new Mem();
         $mem->setCreatedBy($user);
-        $mem->setCreateAt(new \DateTime('now'));
         $mem->setIsAccepted(false);
 
         $form = $this->createForm(new AddMemType(), $mem);
         $form->handleRequest($request);
-
+        
         if ($form->isValid()) {
             $this->persist($mem);
             $this->addFlash('notice', "Mem został pomyślnie zapisany.");

@@ -9,9 +9,9 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * Mems
+ * @Vich\Uploadable
  * @Gedmo\Tree(type="nested")
  * @ORM\Table(name="mem")
  * @ORM\Entity
@@ -57,7 +57,7 @@ class Mem {
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Brak ImageTitle")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -68,6 +68,13 @@ class Mem {
      * @ORM\Column(name="image_name", type="string", length=255)
      */
     private $imageName;
+
+    /**
+     * @Vich\UploadableField(mapping="mems_image", fileNameProperty="imageName")
+     * @Assert\NotBlank(message="Brak ImageFile")
+     * @var File $imageFile
+     */
+    private $imageFile;
 
     /**
      * @Gedmo\Slug(fields={"title"})
@@ -81,8 +88,7 @@ class Mem {
      * @ORM\Column(name="is_accepted", type="boolean")
      */
     private $isAccepted;
-    
-    
+
     /**
      * Get id
      *
@@ -115,7 +121,7 @@ class Mem {
 
     /**
      * Set title
-     *
+     * 
      * @param string $title
      * @return Mems
      */
@@ -284,6 +290,16 @@ class Mem {
      */
     public function getRatings() {
         return $this->ratings;
+    }
+
+    public function setImageFile(File $imageFile) {
+        $this->imageFile = $imageFile;
+
+        
+    }
+
+    public function getImageFile() {
+        return $this->imageFile;
     }
 
 }
