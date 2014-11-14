@@ -27,6 +27,10 @@ class MemsController extends Controller {
                     'mems' => $mems,
         ));
     }
+    
+//    public function losowoAction() {
+//        $mem
+//    }
 
     public function poczekalniaAction() {
         $mems = $this->getDoctrine()

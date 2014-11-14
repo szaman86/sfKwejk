@@ -22,10 +22,19 @@
                 <small>Dodano przez {{comment.createdBy }} dnia {{comment.createdAt|date('Y-m-d H:i:s')}}</small>
             </p>
             {% if is_granted('ROLE_USER') %}
+                
                 <h3>Dodaj komentarz</h3>
-                {{ form(formComment) }}
-                {{ form(formRating) }}
-
+                <div class="row">
+                    {{ form_errors(formComment) }}
+                    {{ form_label(formComment) }}
+                    {{ form_widget(formComment) }}
+                </div>
+                <div class="row">
+                        {{ form_label(formRating) }}
+                        {{ form_errors(formRating) }}
+                        {{ form_widget(formRating) }}
+                
+                </div>
             {% endif %}
 
         {% else %}

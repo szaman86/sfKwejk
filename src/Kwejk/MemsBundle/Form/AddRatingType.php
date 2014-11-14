@@ -14,20 +14,23 @@ class AddRatingType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-        ->add('rating', 'choice', array(
-        'choices' => array(
-        '1' => 1,
-        '2' => 2,
-        '3' => 3,
-        '4' => 4,
-        '5' => 5,
-        ),
-        'expanded' => true,
-        'multiple' => false,
-        'label' => false,
-        )
-        )
-        ->add('save', 'submit');
+                ->add('rating', 'choice', array(
+                    'choices' => array(
+                        '1' => 1,
+                        '2' => 2,
+                        '3' => 3,
+                        '4' => 4,
+                        '5' => 5,
+                    ),
+                    'attr' => [
+                        'display' => 'block'
+                    ],
+                    'expanded' => true,
+                    'multiple' => false,
+                    'label' => false,
+                        )
+                )
+                ->add('save', 'submit');
     }
 
     /**
