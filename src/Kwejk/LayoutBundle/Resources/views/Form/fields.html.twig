@@ -14,6 +14,14 @@
     {% endspaceless %}
 {% endblock form_errors %}
 
+{% use 'form_div_layout.html.twig' with choice_widget as base_choice_widget %}
+{% block integer_widget %}
+    <div class="choice_widget">
+        {{ block('base_choice_widget') }}
+    </div>
+{% endblock %}
+
+
 
     {% block file_widget -%}
         {% set type = type|default('file') %}

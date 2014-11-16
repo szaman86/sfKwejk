@@ -30,3 +30,6 @@ add_rating:
     path:     /addRating
     defaults: { _controller: KwejkMemsBundle:Rating:addRating }
 
+kwejk_random:
+    path: /random
+    defaults: { _controller: KwejkMemsBundle:Mems:random }

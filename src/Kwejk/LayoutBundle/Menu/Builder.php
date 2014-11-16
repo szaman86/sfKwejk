@@ -22,8 +22,8 @@ class Builder extends ContainerAware {
             'uri' => '#'
         ]);
         $menu->addChild('Losuj', [
-//            'route' => 'sf_kwejk_random'
-            'uri' => '#'
+            'route' => 'kwejk_random'
+//            'uri' => '#'
         ]);
         $menu->addChild('Konto', [
             'uri' => '#'

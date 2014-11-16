@@ -27,10 +27,15 @@ class MemsController extends Controller {
                     'mems' => $mems,
         ));
     }
-    
-//    public function losowoAction() {
-//        $mem
-//    }
+
+    public function randomAction() {
+        $mem = $this->getDoctrine()
+                ->getRepository('KwejkMemsBundle:Mem')
+                ->getRandom();
+        return $this->render('KwejkMemsBundle:Mems:show.html.twig', array(
+                    'mem' => $mem,
+        ));
+    }
 
     public function poczekalniaAction() {
         $mems = $this->getDoctrine()
@@ -49,6 +54,16 @@ class MemsController extends Controller {
                     'mems' => $mems,
         ));
     }
+
+//    public function topAction() {
+//
+//        $mems = $this->getDoctrine()
+//                ->getRepository('KwejkMemsBundle:Mem')
+////                wyświetlanie po kategrii is Accepted
+//                ->findBy([
+//            'isAccepted' => false,
+//        ]);
+//    }
 
     public function showAction($slug) {
         $request = $this->getRequest();
@@ -127,7 +142,7 @@ class MemsController extends Controller {
     public function addAction(Request $request) {
         // Sprawdzamy czy mamy użytkownika
         $user = $this->getUser();
-        
+
         if (!$user || !$user->hasRole('ROLE_USER')) {
             throw $this->createAccessDeniedException("Nie posiadasz odpowiednich uprawnień!");
         }
@@ -138,7 +153,7 @@ class MemsController extends Controller {
 
         $form = $this->createForm(new AddMemType(), $mem);
         $form->handleRequest($request);
-        
+
         if ($form->isValid()) {
             $this->persist($mem);
             $this->addFlash('notice', "Mem został pomyślnie zapisany.");
