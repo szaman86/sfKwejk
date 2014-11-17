@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @Vich\Uploadable
  * @Gedmo\Tree(type="nested")
  * @ORM\Table(name="mem")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Kwejk\MemsBundle\Entity\MemRepository")
  */
 class Mem {
 
