@@ -18,8 +18,8 @@ class Builder extends ContainerAware {
 //            'uri' => '#'
         ]);
         $menu->addChild('Top', [
-//            'route' => 'sf_kwejk_list_top'
-            'uri' => '#'
+            'route' => 'kwejk_top'
+//            'uri' => '#'
         ]);
         $menu->addChild('Losuj', [
             'route' => 'kwejk_random'

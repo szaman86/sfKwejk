@@ -55,15 +55,21 @@ class MemsController extends Controller {
         ));
     }
 
-//    public function topAction() {
-//
-//        $mems = $this->getDoctrine()
-//                ->getRepository('KwejkMemsBundle:Mem')
-////                wyświetlanie po kategrii is Accepted
-//                ->findBy([
-//            'isAccepted' => false,
-//        ]);
-//    }
+    public function topAction() {
+
+        $mems = $this->getDoctrine()
+                ->getRepository('KwejkMemsBundle:Mem')
+                ->findAll();
+        
+        
+        if (!$mems) {
+            throw $this->createNotFoundException('Nie znalazłem memów');
+        }
+        
+        return $this->render('KwejkMemsBundle:Mems:list.html.twig', array(
+        'mems' => $mems,
+            ));
+    }
 
     public function showAction($slug) {
         $request = $this->getRequest();

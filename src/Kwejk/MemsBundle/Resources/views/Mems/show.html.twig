@@ -10,9 +10,7 @@
 {% block body %}
     <h1>{{ block('title') }}</h1>
     <div>
-        {#        <a href="{{path('kwejk_mems_show', {'slug':mem.slug})}}">#}
         <img src="{{asset ('uploads/mems/' ~ mem.imageName)}}" alt="{{mem.title}}">
-        {#        </a>#}
         <p>Dodany przez {{mem.CreatedBy}}, dnia {{mem.createAt|date('Y-m-d H:i:s')}}</p>
         <h3>Komentarze ({{mem.comments|length }})</h3>
         {% for comment in mem.comments %}

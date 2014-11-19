@@ -9,11 +9,8 @@ class MemRepository extends EntityRepository {
     public function findAllOrderedByRating() {
 
         return $this->createQueryBuilder('u')
-                ->where('u')
-                ->orderBy('u.rating', 'ASC')
-                ->getQuery();
-                
-  
+                ->where('u.isAccepted = true')
+                ;
     }
 
     public function getRandom() {

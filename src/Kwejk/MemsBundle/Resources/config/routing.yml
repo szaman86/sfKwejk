@@ -14,6 +14,14 @@ kwejk_mems_poczekalnia:
     path:   /poczekalnia
     defaults: { _controller: KwejkMemsBundle:Mems:poczekalnia }
 
+kwejk_top:
+    path:   /top
+    defaults: { _controller: KwejkMemsBundle:Mems:top }
+
+kwejk_random:
+    path: /random
+    defaults: { _controller: KwejkMemsBundle:Mems:random }
+
 kwejk_mems_show:
     path:     /{slug}
     defaults: { _controller: KwejkMemsBundle:Mems:show }
@@ -30,6 +38,3 @@ add_rating:
     path:     /addRating
     defaults: { _controller: KwejkMemsBundle:Rating:addRating }
 
-kwejk_random:
-    path: /random
-    defaults: { _controller: KwejkMemsBundle:Mems:random }
